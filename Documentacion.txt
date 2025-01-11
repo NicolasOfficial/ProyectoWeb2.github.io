@@ -1,0 +1,98 @@
+Desarrollador: Juan Pablo Sánchez Nicolás
+Fecha: 11-01-2025
+Contacto: juansanchez318@aragon.unam.mx
+
+Descripción general del proyecto
+
+Este proyecto es una aplicación web que permite a los usuarios registrarse e iniciar sesión de forma segura.
+Los datos de los usuarios se almacenan en una base de datos MySQL y el backend está creado con Node.js y Express.js. 
+El sistema realiza la validación de los campos de entrada y gestiona de forma segura la autenticación de los usuarios.
+
+Aplicaciones web y herramientas utilizadas:
+
+Editor de texto: visual studio code
+
+Front-end: HTML, CSS, JavaScript, Bootstrap
+
+Back-end: Node.js, Express.js
+
+Base de datos: MySQL
+
+Servidor: servidor Node.js que se ejecuta en localhost:3000
+
+
+Características
+
+1. Registro de usuario (register.html)
+
+Recopila los datos del usuario: nombre, apellido, apellido materno, correo electrónico, teléfono, nombre de usuario y contraseña.
+
+Valida que los campos no estén vacíos y cumplan con los criterios de entrada.
+
+Inserta datos validados en la base de datos MySQL.
+
+Redirecciona a la página de inicio de sesión tras un registro exitoso.
+
+Muestra un mensaje de error emergente para los datos no válidos.
+
+2. Inicio de sesión de usuario (login.html)
+
+Autentica a los usuarios verificando el nombre de usuario y la contraseña con la base de datos.
+
+Redirecciona los inicios de sesión exitosos a GitHub.
+
+Muestra un mensaje de error emergente para las credenciales incorrectas.
+
+3. Conexión de base de datos (db.js)
+
+Conecta el backend de Node.js a la base de datos MySQL.
+
+Maneja consultas SQL para el registro y autenticación de usuarios.
+
+4. Configuración del servidor (server.js)
+
+Configura el servidor Express.js para manejar solicitudes de frontend y llamadas API.
+
+Se ejecuta en http://localhost:3000.
+
+
+
+
+
+Instalación y configuración
+
+Instalar Node.js y MySQL (si aún no están instalados).
+
+Inicia MySQL y Apache con XAMPP.
+
+Crear la base de datos:
+
+Abre http://localhost/phpmyadmin.
+
+Crear una base de datos denominada user_system.
+
+Ejecutar el siguiente SQL para crear la tabla de usuarios:
+
+
+CREATE DATABASE user_system;
+
+USE user_system;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    father_last_name VARCHAR(50) NOT NULL,
+    mother_last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    phone VARCHAR(10) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+Dependencias de instalación:  npm install express mysql body-parser bcryptjs cors
+
+Ejecutar el servidor: node server.js
+
+
+
+

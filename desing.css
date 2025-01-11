@@ -1,0 +1,41 @@
+html,
+body {
+  height: 100%;
+}
+.fondo {
+  height: 100vh; 
+  background-image: url('background-image/blur1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; 
+}
+
+@media (max-width: 768px) {
+  .fondo {
+      background-attachment: scroll; 
+      background-size: cover; 
+      background-position: center; 
+  }
+}
+.form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
